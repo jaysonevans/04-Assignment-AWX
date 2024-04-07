@@ -1,0 +1,5 @@
+# Shell scripts
+*.sh
+
+# Container Lab directory
+**/clab-assignment-3/*
