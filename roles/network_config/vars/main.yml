@@ -1,0 +1,11 @@
+---
+# vars file for network_config
+hostname: Generic
+interfaces:
+  - name: Ethernet1
+    mode: no switchport
+  - name: Ethernet2
+    mode: no switchport
+ospf_process_id: 1
+ospf_prefix: 10.3.0.0/24
+ospf_area: 0.0.0.0
