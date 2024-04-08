@@ -1,0 +1,60 @@
+- name: Add Generic Configurations
+  hosts: all
+  tasks:
+    - name: Configure Routers
+      include_role:
+        name: network_config
+
+- name: Set interfaces R1
+  hosts: R1
+  tasks:
+    - name: Set interfaces
+      arista.eos.eos_l3_interfaces:
+        config:
+          - name: Ethernet1
+            ipv4:
+              - address: 10.3.0.1/30
+          - name: Ethernet2
+            ipv4:
+              - address: 10.3.0.13/30
+        state: merged
+
+- name: Set interfaces R2
+  hosts: R2
+  tasks:
+    - name: Set interfaces
+      arista.eos.eos_l3_interfaces:
+        config:
+          - name: Ethernet1
+            ipv4:
+              - address: 10.3.0.2/30
+          - name: Ethernet2
+            ipv4:
+              - address: 10.3.0.5/30
+        state: merged
+
+- name: Set interfaces R3
+  hosts: R3
+  tasks:
+    - name: Set interfaces
+      arista.eos.eos_l3_interfaces:
+        config:
+          - name: Ethernet1
+            ipv4:
+              - address: 10.3.0.6/30
+        state: merged
+
+- name: Set interfaces R1
+  hosts: R4
+  tasks:
+    - name: Set interfaces
+      arista.eos.eos_l3_interfaces:
+        config:
+          - name: Ethernet1
+            ipv4:
+              - address: 10.3.0.14/30
+          - name: Ethernet2
+            ipv4:
+              - address: 10.3.0.17/30
+        state: merged
+
