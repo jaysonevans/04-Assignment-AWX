@@ -1,0 +1,49 @@
+- name: Add unique hostnames
+  gather_facts: false
+  hosts: R1
+  tasks:
+    - name: Set hostname
+      arista.eos.eos_hostname:
+        config:
+          hostname: Colorado
+        state: merged
+
+- name: Add unique hostnames
+  gather_facts: false
+  hosts: R2
+  tasks:
+    - name: Set hostname
+      arista.eos.eos_hostname:
+        config:
+          hostname: Florida
+        state: merged
+
+- name: Add unique hostnames
+  gather_facts: false
+  hosts: R3
+  tasks:
+    - name: Set hostname
+      arista.eos.eos_hostname:
+        config:
+          hostname: California
+        state: merged
+
+- name: Add unique hostnames
+  gather_facts: false
+  hosts: R4
+  tasks:
+    - name: Set hostname
+      arista.eos.eos_hostname:
+        config:
+          hostname: Texas
+        state: merged
+
+- name: Add unique hostnames
+  gather_facts: false
+  hosts: R5
+  tasks:
+    - name: Set hostname
+      arista.eos.eos_hostname:
+        config:
+          hostname: Michigan
+        state: merged
