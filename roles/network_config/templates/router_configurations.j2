@@ -8,10 +8,6 @@ management ssh
 
 logging on
 
-{% for user in users %}
-  username {{ user.name }} privilege {{ user.privilege }} secret 0 {{ user.password }}
-{% endfor %}
-
 {% for interface in interfaces %}
 interface {{ interface.name }}
   {{ interface.mode }}
