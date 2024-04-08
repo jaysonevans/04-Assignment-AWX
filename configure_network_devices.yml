@@ -44,7 +44,7 @@
               - address: 10.3.0.6/30
         state: merged
 
-- name: Set interfaces R1
+- name: Set interfaces R4
   hosts: R4
   tasks:
     - name: Set interfaces
@@ -56,5 +56,16 @@
           - name: Ethernet2
             ipv4:
               - address: 10.3.0.17/30
+        state: merged
+
+- name: Set interfaces R5
+  hosts: R5
+  tasks:
+    - name: Set interfaces
+      arista.eos.eos_l3_interfaces:
+        config:
+          - name: Ethernet1
+            ipv4:
+              - address: 10.3.0.18/30
         state: merged
 
