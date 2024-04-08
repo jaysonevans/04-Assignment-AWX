@@ -1,7 +1,7 @@
 - name: Generate configuration from template
   ansible.builtin.template:
-    src: templates/router_configurations.j2
-    dest: templates/config.txt
+    src: router_configurations.j2
+    dest: config.txt
 
 - name: Apply configuration to the router
   arista.eos.eos_config:

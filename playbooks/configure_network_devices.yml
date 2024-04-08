@@ -3,7 +3,7 @@
   tasks:
     - name: Configure Routers
       include_role:
-        name: network_config
+        name: roles/network_config
 
 - name: Set interfaces R1
   hosts: R1
